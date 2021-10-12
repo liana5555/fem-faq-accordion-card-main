@@ -1,0 +1,18 @@
+header {
+    background-image: url(/images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding-bottom: 0px;
+    align-content: center;
+    text-align: center;
+    min-width: 375px;
+    z-index: 2;
+
+    
+    img {
+        transform: translateX( -15px);
+        z-index: 1;
+        height: auto;
+        width: max-content;
+    }
+}
