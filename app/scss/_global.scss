@@ -4,27 +4,156 @@ html {
 }
 *, *::after, *::before {
     box-sizing: inherit;
+    
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-size: 0.75rem;
     font-family: 'Kumbh Sans', sans-serif;
     font-weight: 400;
     background: linear-gradient($softViolet, $softBlue);
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     align-content: center;
+    justify-content: center;
+    align-items: center;
+      
+}
+h1 {
+    margin: 0 0 42px 0; 
+    font-size: 30px; 
+    color: $veryDarkDesaturatedBlue;
+    @include break-up ('large') {
+        text-align: left;
+    }
+}
+h2 {
+    font-size: 0.75rem;
+    text-align: left;
+    color: $veryDarkGrayishBlue;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
+.opened {
+    font-weight:  700;
+}
+hr {
+    color: $lightGrayishBlue;
+    background-color: $lightGrayishBlue;
+    height: 1px;
+    border-width: 0;
+    margin: 0 0 20px 0; 
 }
 
 main {
+    
+    transform: translateY(-45px);
+    @include break-up ('large') {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 20px;
+        min-width: 920px;
+        max-width: 920px;
+        min-height: 510px;
+        align-items: stretch;
+        transform: translateY(0px);
+        box-shadow: 0 30px 50px -20px $veryDarkDesaturatedBlue;
+        
+       
+
+
+    }
+}
+.main {
     background: white;
-    border-radius: 20px;
-    transform: translateY(-90px);
-    min-width: 370px; // it wasn't measured change it
-    height: 40vh;
+    border-radius: 20px;    
+    max-width: 330px;
+    min-width: 330px;
     position: relative;
     z-index: -2;
-    padding-top: 100px;
     text-align: center;
+    margin-bottom: 10px;
+    color: $veryDarkDesaturatedBlue;
+    padding: 138px 25px 28px 25px; 
+    transition: all 250ms ease-in-out; 
+    box-shadow: 0 20px 30px -10px $veryDarkDesaturatedBlue;
+    @include break-up ("large") {
+        border-radius: 0;
+        background-color: transparent;
+        min-width: 532px;
+        max-width: 532px;
+        padding: 0 88px 0 96px;
+        //padding: 72px 88px 0px 96px;
+        max-height: 510px;
+        align-self: center;
+        box-shadow: none;
+        
+    }
+    
+    .question-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            color: $softRed;
+
+        }
+
+    }
+    .answer {
+            display: none;
+            color: $darkGrayishBlue;
+            margin: 0 0 20px 0;
+            text-align: left;
+            font-weight: 400;
+            transition: all 250ms ease-in-out;
+        }
+
+    .arrow {
+        height: 0.75rem;
+        transition: all 250ms ease-in-out;
+
+        &__up {
+            transform: rotate(180deg);
+
+        }
+       
+    }
+    
+
+    .answer-opened {
+        display: block;
+    }
+    
+}
+
+footer {
+    font-size: 11px; text-align: center;
+    color: lightgray;
+    margin-top: 20px;
+    transform: translateY(-45px);
+    
+    
+    @include break-up ('large') {
+        transform: translateY(0px);
+    }
+
+  a {
+      color: $softRed;
+      text-decoration: none;
+      
+  }
+  a:hover {
+      text-decoration: underline;
+      
+  }
+   
 }
 

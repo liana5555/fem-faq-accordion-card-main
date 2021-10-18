@@ -5,14 +5,64 @@ header {
     padding-bottom: 0px;
     align-content: center;
     text-align: center;
-    min-width: 375px;
+    
+    min-width: 330px;
     z-index: 2;
+    transition: all 250ms ease-in-out;
+    
+    position: relative;
+    top: 90px;
+
+    @include break-up ('large') {
+        background-image: url('/images/bg-pattern-desktop.svg');        
+        max-width: 388px;       
+        background-repeat: no-repeat;
+        top: 0px;
+        background-size: 235%;
+        background-position: 100% 70%;
+        max-height: 510px;
+        position: relative;
+        
+        
+
+    }
 
     
-    img {
+    .mobile {
         transform: translateX( -15px);
         z-index: 1;
         height: auto;
         width: max-content;
+         @include break-up ('large') {
+            display: none
+         }
+    }
+    .img-container {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .desktop {
+        display: none;
+        @include break-up ('large') {
+            display: block;
+            height: auto;
+            width: max-content;
+
+
+            &__woman {
+                
+                position: relative;
+                top: 50px;
+                left: -85px;
+            }
+
+            &__box {
+                
+                position: absolute;
+                top: 184px;
+                left: -92px;
+            }
+        }
     }
 }
